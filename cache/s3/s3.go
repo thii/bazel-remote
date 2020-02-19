@@ -140,6 +140,7 @@ func (c *s3Cache) uploadFile(item uploadReq) {
 		uploadDigest,                      // sha256
 		map[string]string{
 			"Content-Type": "application/octet-stream",
+			"x-amz-acl":    "public-read",
 		}, // metadata
 		nil, // sse
 	)
